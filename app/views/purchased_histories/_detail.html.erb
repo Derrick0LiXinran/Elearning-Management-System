@@ -1,0 +1,33 @@
+<table>
+  <thead>
+  <tr>
+    <th>Course Number</th>
+    <th>Course Name</th>
+    <th>Purchaser</th>
+    <th>Teacher</th>
+    <th>Date Purchased</th>
+    <th colspan="4"></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% if @purchased_histories.respond_to? :each %>
+  <% @purchased_histories.each do |history| %>
+    <tr>
+      <td><%= history.course.course_number %></td>
+      <td><%= history.course.name %></td>
+      <td><%= history.student.name %></td>
+      <td><%= history.teacher.name %></td>
+      <td><%= history.created_at %></td>
+      </tr>
+  <% end %>
+    <% else %>
+    <tr>
+      <td><%= @purchased_histories.course.course_number %></td>
+      <td><%= @purchased_histories.student.name %></td>
+      <td><%= @purchased_histories.teacher.name %></td>
+      <td><%= @purchased_histories.created_at %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -1,0 +1,5 @@
+checking whether to enable maintainer-specific portions of Makefiles... yes
+checking build system type... x86_64-apple-darwin19.6.0
+checking host system type... x86_64-apple-darwin19
+checking for a BSD-compatible install... /usr/local/bin/ginstall -c
+checking whether build environment is sane... configure: error: unsafe absolute working directory name

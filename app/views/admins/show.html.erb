@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @admin.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @admin.email %>
+</p>
+
+<p>
+  <strong>Password:</strong>
+  <%= @admin.password %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @admin.address %>
+</p>
+
+<p>
+  <strong>Phone Number:</strong>
+  <%= @admin.phone_number %>
+</p>
+<%= link_to 'Course List', '/courses' %>
+<%= link_to 'Student Page', '/students' %>
+<%= link_to 'Teacher Page', '/teachers' %>
+<%= link_to 'Feedback Page', '/feedbacks' %>
+<%= link_to 'Edit', edit_admin_path(@admin) %> |
+<%= link_to 'Log Out', logout_path %>

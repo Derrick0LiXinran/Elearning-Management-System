@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @student.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @student.email %>
+</p>
+
+<p>
+  <strong>Password:</strong>
+  <%= @student.password %>
+</p>
+
+<p>
+  <strong>Major:</strong>
+  <%= @student.major.major_name %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @student.address %>
+</p>
+
+<p>
+  <strong>Phone Number:</strong>
+  <%= @student.phone_number %>
+</p>
+
+<%= link_to 'Course Catalog', course_catalog_student_path(@student) %>
+<%= link_to 'Credit Card Information', student_credit_card_info_path(@student) %>
+<%= link_to 'View Purchased History', student_purchased_histories_path(@student) %>
+<%= link_to 'Feedbacks', student_feedbacks_path(@student) %>
+<%= link_to 'Edit', edit_student_path(@student) %>
+<% if current_user.type == 'Student' %>
+  <%= link_to 'Log out', logout_path %>
+<% end %>
+
+
+<% if current_user.type == 'Admin' %>
+  <%= link_to 'Back', admin_path(current_user) %>
+<% end %>

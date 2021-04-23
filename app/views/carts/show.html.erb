@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Cart</h1>
+
+<table>
+  <thead>
+  <tr>
+    <th>Course Name</th>
+    <th>Teacher</th>
+    <th>Price</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @cart.course_packages.each do |package| %>
+    <tr>
+      <td><%= package.course.name %></td>
+      <td><%= package.teacher.name %></td>
+      <td><%= number_to_currency(package.course.price) %></td>
+      <td><%= link_to 'Remove', remove_from_cart_student_cart_path(@student, @cart, package), method: :delete %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<p>Total: <%= total_price(@cart) %></p>
+
+
+<%= link_to 'Checkout', check_password_path(@student) %> |
+<%= link_to 'Back', course_catalog_student_path(@student) %>

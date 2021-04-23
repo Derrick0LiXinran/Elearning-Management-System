@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @teacher.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @teacher.email %>
+</p>
+
+<p>
+  <strong>Password:</strong>
+  <%= @teacher.password %>
+</p>
+
+<p>
+  <strong>Discipline:</strong>
+  <%= @teacher.discipline.name %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @teacher.address %>
+</p>
+
+<p>
+  <strong>Phone Number:</strong>
+  <%= @teacher.phone_number %>
+</p>
+
+<%= link_to 'View available courses', teacher_index_course_path(@teacher) %>
+<%= link_to 'Mentored history', teacher_purchased_histories_path(@teacher) %>
+<%= link_to 'View Feedbacks', teacher_feedbacks_path(@teacher) %>
+<%= link_to 'Edit', edit_teacher_path(@teacher) %>
+<% if current_user.type == 'Admin' %>
+  <%= link_to 'Back', teachers_path %>
+<% end %>
+
+<% if current_user.type == 'Teacher' %>
+  <%= link_to 'Log out', logout_path %>
+<% end %>
+

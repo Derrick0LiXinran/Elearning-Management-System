@@ -1,0 +1,37 @@
+<%= form_with(model: credit_card_info, url: student_credit_card_info_path(@student, @credit_card_info), local: true) do |form| %>
+  <% if credit_card_info.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(credit_card_info.errors.count, "error") %> prohibited this admin from being saved:</h2>
+
+      <ul>
+        <% credit_card_info.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :card_number %>
+    <%= form.text_field :card_number %>
+  </div>
+
+  <div class="field">
+    <%= form.label 'expiration date (MM/YY)' %>
+    <%= form.text_field :expiration_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :cvv %>
+    <%= form.text_field :cvv %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

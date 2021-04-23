@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+</head>
+<body>
+Congrats! You have been registered.
+
+<ul>
+<% @student.cart.course_packages.each do |package| %>
+<li> <%= package.course.name %></li>
+<% end %>
+</ul>
+<!--<p>You got a new order from <%#= @order.name %>!</p>-->
+<!--<p>-->
+<!--  Order details<br>-->
+<!--  ---------------------------->
+<!--</p>-->
+<!--<p>Name: <%#= @order.name %></p>-->
+<!--<p>Email: <%#= @order.email %></p>-->
+<!--<p>Address: <%#= @order.address %></p>-->
+<!--<p>Phone: <%#= @order.phone %></p>-->
+<!--<p>-->
+<!--  Message:<br>-->
+<!--  ------------>
+<!--</p>-->
+<!--<p><%#= @order.message %></p>-->
+</body>
+</html>

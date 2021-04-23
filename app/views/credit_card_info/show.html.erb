@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @credit_card_info.name %>
+</p>
+
+<p>
+  <strong>Card Number:</strong>
+  <%= @credit_card_info.card_number %>
+</p>
+
+<p>
+  <strong>Expiration Date (MM/YY):</strong>
+  <%= @credit_card_info.expiration_date %>
+</p>
+
+<p>
+  <strong>CVV:</strong>
+  <%= @credit_card_info.cvv %>
+</p>
+
+<%= link_to 'Edit', edit_student_credit_card_info_path(@student, @credit_card_info) %> |
+<%= link_to 'Back', student_path(@student) %>

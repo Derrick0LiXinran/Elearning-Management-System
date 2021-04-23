@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Purchased Histories</h1>
+
+<% render 'detail' %>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @purchased_histories.each do |purchased_history| %>
+      <tr>
+        <td><%= link_to 'Show', purchased_history %></td>
+        <td><%= link_to 'Edit', edit_purchased_history_path(purchased_history) %></td>
+        <td><%= link_to 'Destroy', purchased_history, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Purchased History', new_purchased_history_path %>

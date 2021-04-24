@@ -18,9 +18,6 @@ Teacher Email: xchen33@ncsu.edu
 Password: admin
 
 
-# Website Address
-
-http://100.25.155.73:3000
 
 
 # Description
